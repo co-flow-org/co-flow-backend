@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/co-flow
+    username: co-flow-user
+    password: co-flow-user123a
