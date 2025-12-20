@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/co-flow
+    username: co-flow-user
+    password: co-flow-user123a
+
+  data:
+    redis:
+      host: redis
+      port: 6379
+
+  jpa:
+    hibernate:
+      ddl-auto: update
