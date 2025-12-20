@@ -19,6 +19,7 @@
     </properties>
 
     <modules>
+        <module>co-flow-gw</module>
         <module>user-service</module>
     </modules>
 </project>
