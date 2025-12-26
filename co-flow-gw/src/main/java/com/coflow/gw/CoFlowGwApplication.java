@@ -9,8 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CoFlowGwApplication {
 
     public static void main(String[] args) {
+        log.info("Starting CoFlow GW...");
         SpringApplication.run(CoFlowGwApplication.class, args);
-        log.info("CoFlow GW started");
+        log.info("CoFlow GW started!");
     }
 
 }
