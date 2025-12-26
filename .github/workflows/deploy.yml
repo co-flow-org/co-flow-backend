@@ -20,7 +20,20 @@ jobs:
           username: ${{ secrets.VM_USER }}
           key: ${{ secrets.VM_SSH_KEY }}
           script: |
+            cd ~/dev/backend/co-flow-backend
+            git fetch origin
+            git checkout deploy
+            git pull origin deploy
+            
+            CURRENT_BRANCH=$(git branch --show-current)
+            if [ "$CURRENT_BRANCH" != "deployment" ]; then
+              echo "❌ Not on deploy branch"
+              exit 1
+            fi
+          
+            mvn clean package -DskipTests
+          
             cd ~/dev
-            git pull
             docker-compose down
-            docker-compose up -d --build
+            docker-compose build
+            docker-compose up -d
