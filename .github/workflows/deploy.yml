@@ -22,8 +22,8 @@ jobs:
           script: |
             cd ~/dev/backend/co-flow-backend
             git fetch origin
-            git checkout deploy
-            git pull origin deploy
+            git checkout deployment
+            git pull origin deployment
             
             CURRENT_BRANCH=$(git branch --show-current)
             if [ "$CURRENT_BRANCH" != "deployment" ]; then
