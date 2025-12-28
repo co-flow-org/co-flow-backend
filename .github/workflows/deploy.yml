@@ -29,6 +29,5 @@ jobs:
             mvn clean package -DskipTests
           
             cd ~/dev
-            docker compose pull
-            docker compose build
+            docker compose -f docker-compose.app.yml build
             docker compose -f docker-compose.app.yml up -d --build
