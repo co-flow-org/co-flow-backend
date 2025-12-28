@@ -43,7 +43,7 @@ jobs:
           context: .
           file: ./co-flow-gw/Dockerfile
           push: true
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_OWNER }}/co-flow-gateway:latest
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_OWNER }}/co-flow-gw:latest
 
       - name: Build and push User Service
         uses: docker/build-push-action@v5
