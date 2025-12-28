@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_OWNER: co-flow
+  IMAGE_OWNER: co-flow-org
 
 jobs:
   build-and-push:
