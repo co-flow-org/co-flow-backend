@@ -40,14 +40,14 @@ jobs:
       - name: Build and push Gateway
         uses: docker/build-push-action@v5
         with:
-          context: ./backend/co-flow-backend/co-flow-gateway
+          context: ./co-flow-gw
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_OWNER }}/co-flow-gateway:latest
 
       - name: Build and push User Service
         uses: docker/build-push-action@v5
         with:
-          context: ./backend/co-flow-backend/user-service
+          context: ./user-service
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_OWNER }}/co-flow-user-service:latest
 
