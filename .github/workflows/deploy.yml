@@ -29,6 +29,6 @@ jobs:
             mvn clean package -DskipTests
           
             cd ~/dev
-            docker-compose pull
-            docker-compose build
-            docker-compose up -d --remove-orphans
+            docker compose pull
+            docker compose build
+            docker compose up -d --remove-orphans
