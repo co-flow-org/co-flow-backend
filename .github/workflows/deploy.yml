@@ -63,17 +63,9 @@ jobs:
           host: ${{ secrets.VM_HOST }}
           username: ${{ secrets.VM_USER }}
           key: ${{ secrets.VM_SSH_KEY }}
-          script: |
-#           Login to a registry on the VM so it can pull private images
+          script: | 
             echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-            
             cd ~/dev
-            
-#           Pull the new images created in the previous job
             docker compose -f docker-compose.app.yml pull
-            
-#           Restart containers with new images
             docker compose -f docker-compose.app.yml up -d
-            
-#           Cleanup unused images to save disk space
             docker image prune -f
