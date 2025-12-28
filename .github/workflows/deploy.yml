@@ -24,12 +24,6 @@ jobs:
             git fetch origin
             git checkout deployment
             git pull origin deployment
-            
-            CURRENT_BRANCH=$(git branch --show-current)
-            if [ "$CURRENT_BRANCH" != "deployment" ]; then
-              echo "❌ Not on deploy branch"
-              exit 1
-            fi
           
             mvn clean package -DskipTests
           
