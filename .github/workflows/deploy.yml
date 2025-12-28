@@ -31,4 +31,4 @@ jobs:
             cd ~/dev
             docker compose pull
             docker compose build
-            docker compose up -d --remove-orphans
+            docker compose up -d --no-deps co-flow-gw co-flow-user-service
